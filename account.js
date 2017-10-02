@@ -1,18 +1,26 @@
 class Account {
- 	constructor (){
-		this.balance = 0;
+ 	constructor (user ,balance =  0){
+		this.balance = Number(balance);
+		this.user = user;		
 	}
+
   balance (){
     return this.balance;
-  }
-	deposit (amount){
-		this.balance += amount;
 	}
+
+	user (){
+    return this.user;
+	}
+
+	deposit (amount){
+		this.balance += Number(amount);
+	}
+
 	withdraw (amount){
-    if(this.balance < amount){
+    if(this.balance < Number(amount)){
       throw new Error("There aren't money.");
     }
-		this.balance -= amount;
+		this.balance -= Number(amount);
 	}
 }
 

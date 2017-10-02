@@ -2,14 +2,16 @@
   "name": "account",
   "version": "1.0.0",
   "description": "",
-  "main": "account.js",
+  "main": "",
   "scripts": {
     "test": "./node_modules/.bin/mocha"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "async": "^2.5.0",
     "chai": "^4.1.2",
-    "mocha": "^3.5.3"
+    "mocha": "^3.5.3",
+    "supertest": "^3.0.0"
   }
 }
