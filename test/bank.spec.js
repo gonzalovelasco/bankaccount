@@ -19,6 +19,7 @@ describe('Bank', () => {
         }
 
         before(() => {
+            //50 randoms transactions from two users
             bank = new Bank(1000);
             data = new Array(50);
             for (var i = 0; i < data.length; i++) {
@@ -37,6 +38,8 @@ describe('Bank', () => {
         });
 
         it('do 50 random operations', () => {
+            bank.printaccount();            
+            console.log('USUARIO OPERACION MONTO SALDO');            
             async.parallel(asyncTasks, function(){
                 bank.printaccount();
             });

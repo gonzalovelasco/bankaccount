@@ -1,11 +1,26 @@
 let Account = require('./account.js');
 let Transaction = require('./transaction.js');
 
+/*
+ * Bank
+ *   Models a Bank.
+ * Fields:
+ *   account: Account
+ *   transactions: Transaction
+ * Methods:
+ *   dooperation: ()
+ *     Returns Account balance
+ *   deposit: (user,operation,amount)
+ *     Do operation in Account and add one transaction.
+ *   printtransactions: (amount: number)
+ *     Print transactions. 
+ *   printaccount: ()
+ *     Print Account
+ */
 class Bank {
     constructor (balance = 1000){
         this.account = new Account(balance);
         this.transactions = [];
-        console.log('USUARIO OPERACION MONTO SALDO');
     }
 
     dooperation (user,operation,amount){

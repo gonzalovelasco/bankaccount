@@ -1,3 +1,18 @@
+/*
+ * Account
+ *   Models a bank account.
+ * Fields:
+ *   balance: number
+ * Methods:
+ *   balance: ()
+ *     Returns Account balance
+ *   deposit: (amount: number)
+ *     Returns Account with balance increased by amount.
+ *   withdraw: (amount: number)
+ *     Returns Account with balance decreased by amount. 
+ *   tostring: ()
+ *     Print Account
+ */
 class Account {
  	constructor (balance){
 		this.balance = balance;

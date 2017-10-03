@@ -1,3 +1,14 @@
+/*
+ * Transaction
+ *   Models a Transaction.
+ * Fields:
+ *   user: string
+ *   operation: string
+ *   amount: number
+ *   balance: number
+ *   datetime: date
+ */
+
 class Transaction {    
     constructor (user,operation,amount,balance){
         this.user = user;
