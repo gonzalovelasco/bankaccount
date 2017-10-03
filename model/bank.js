@@ -2,29 +2,25 @@ let Account = require('./account.js');
 let Transaction = require('./transaction.js');
 
 class Bank {
-    constructor (){
-        this.accounts = [];
+    constructor (balance = 1000){
+        this.account = new Account(balance);
         this.transactions = [];
         console.log('USUARIO OPERACION MONTO SALDO');
-    }
-
-    addaccount (user,balance){
-        this.accounts[user] = new Account(user,balance);
     }
 
     dooperation (user,operation,amount){
         if(operation === 'extraccion'){
 
             try {
-                this.accounts[user].withdraw(amount);
+                this.account.withdraw(amount);
             } catch(err) {
             }
         }
         else if(operation === 'deposito'){
-            this.accounts[user].deposit(amount);
+            this.account.deposit(amount);
         }
-        let transaction = new Transaction(user, operation, amount, this.accounts[user].balance);
-        //transaction.tostring();
+        let transaction = new Transaction(user, operation, amount, this.account.balance);
+        transaction.tostring();
         this.transactions.push(transaction);
 
     }
@@ -34,12 +30,9 @@ class Bank {
         }
 
     }
-    printaccounts(){
+    printaccount(){
+        this.account.tostring();
 
-      for (var key in this.accounts) {
-          let value = this.accounts[key];
-          value.tostring();
-      }
     }
 }
 
