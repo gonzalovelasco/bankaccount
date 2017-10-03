@@ -1,6 +1,6 @@
 const  http = require('http');
 const url = require('url');
-let Bank = require('./bank.js');
+let Bank = require('./model/bank.js');
 let accounts = [];
 
 let bank = new Bank();
@@ -15,11 +15,11 @@ let server = http.createServer((req, res) => {
    let amount =  urlData.query.amount;
    let user =  urlData.query.user;
    if(urlData.pathname === "/api/deposit"){
-    bank.dooperation(user,"deposito",amount);    
+    bank.dooperation(user,"deposito",amount);
    }else if (urlData.pathname === "/api/withdraw"){
-    bank.dooperation(user,"extraccion",amount);        
+    bank.dooperation(user,"extraccion",amount);
    }
-   res.writeHead(200);       
+   res.writeHead(200);
    res.end();
 });
 
