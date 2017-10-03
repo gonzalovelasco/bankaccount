@@ -3,10 +3,7 @@ const url = require('url');
 let Bank = require('./model/bank.js');
 let accounts = [];
 
-let bank = new Bank();
-
-bank.addaccount("juan",1000);
-bank.addaccount("pedro",1000);
+let bank = new Bank(1000);
 
 let server = http.createServer((req, res) => {
 

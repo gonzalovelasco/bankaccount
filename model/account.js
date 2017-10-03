@@ -1,7 +1,6 @@
 class Account {
- 	constructor (user,balance){
+ 	constructor (balance){
 		this.balance = balance;
-    this.user = user;
 	}
   balance (){
     return this.balance;
@@ -17,7 +16,7 @@ class Account {
 		this.balance -= amo;
 	}
   tostring (){
-    console.log(`${this.user} Saldo: ${this.balance}`);
+    console.log(`Saldo: ${this.balance}`);
   }
 }
 

@@ -19,15 +19,12 @@ describe('Bank', () => {
         }
 
         before(() => {
-            bank = new Bank();
-            bank.addaccount("juan",1000);
-            bank.addaccount("pedro",1000);
-
+            bank = new Bank(1000);
             data = new Array(50);
             for (var i = 0; i < data.length; i++) {
                 let random_boolean = Math.random() >= 0.5;
                 let random_boolean2 = Math.random() >= 0.5;
-                data[i] = {amount : randomIntInc(1000,2000), user:random_boolean2?"juan":"pedro", operation:random_boolean? "extraccion":"deposito"};
+                data[i] = {amount : randomIntInc(0,1000), user:random_boolean2?"juan":"pedro", operation:random_boolean? "extraccion":"deposito"};
             }
             data.forEach((item) =>{
                 asyncTasks.push((callback) =>{
@@ -39,13 +36,10 @@ describe('Bank', () => {
 
         });
 
-        it('make operations', () => {
+        it('do 50 random operations', () => {
             async.parallel(asyncTasks, function(){
-                bank.printaccounts();
+                bank.printaccount();
             });
-
-            //bank.dooperation("juan","deposito",1000);
-            //bank.dooperation("juan","extraccion",1000);
 
         });
 
